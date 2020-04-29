@@ -18,8 +18,8 @@ from django.urls import path, include
 from register import views as v
 
 urlpatterns = [
-    path('register/', v.register, name='register'),
     path('admin/', admin.site.urls),
     path('', include('todo.urls')),
     path('', include('django.contrib.auth.urls')),
+    path('register/', v.register, name='register'),
 ]

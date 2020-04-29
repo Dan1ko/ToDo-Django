@@ -1,9 +1,14 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_POST
 
-from . models import Todo
-from . forms import TodoForm
+from todo.models import Todo
+from todo.forms import TodoForm
 
+def login(request):
+    return render(request, 'registration/login.html')
+
+def logout(request):
+    return render(request, 'registration/logout.html')
 
 def index(request):
     todo_list = Todo.objects.order_by('id')
